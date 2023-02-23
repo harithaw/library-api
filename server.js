@@ -14,6 +14,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//import routes
+const bookRoutes = require('./routes/books')
+const userRoutes = require('./routes/users')
+const lendRoutes = require('./routes/lends')
+
+app.use('/books',bookRoutes)
+app.use('/users',userRoutes)
+app.use('/lends',lendRoutes)
+    
+
 //connect DB
 mongoose.connect(uri,{useNewUrlParser: true})
     .then(()=>{
@@ -21,5 +31,3 @@ mongoose.connect(uri,{useNewUrlParser: true})
             console.log('Connected to DB && server running on port:'+port);
         })
     });
-
-    

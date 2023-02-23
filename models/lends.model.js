@@ -16,4 +16,4 @@ const lendsSchema = new Schema({
     }
 },{timestamps:true});
 
-module.export = mongoose.model('Lend',lendsSchema);
+module.exports = mongoose.model('Lend',lendsSchema);

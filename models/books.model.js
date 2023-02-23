@@ -15,10 +15,10 @@ const bookSchema = new Schema({
         type: String,
         required:true,
     },
-    Avalible:{
+    Available:{
         type: Boolean,
         required:true,
     }
 },{timestamps:true});
 
-module.export = mongoose.model('Book',bookSchema);
+module.exports = mongoose.model('Book',bookSchema);
