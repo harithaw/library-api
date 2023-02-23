@@ -8,7 +8,7 @@ const getLends = async(req,res)=>{
     res.status(200).json(lends)
 }
 
-//create new user
+//create new lend
 const createLend = async(req,res)=>{
     const {ISBN, username, date} = req.body 
 

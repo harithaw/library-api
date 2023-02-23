@@ -39,8 +39,25 @@ const createBook = async(req,res)=>{
     }
 }
 
+
+//update book
+const updateBook = async(req,res)=>{
+    const {isbn} = req.params
+
+    const book = await Book.findOneAndUpdate({ISBN:isbn},{
+        ...req.body
+    })
+
+    if (!book){
+        return res.status(404).json({error:'No such book'})
+    }
+
+    res.status(200).json(book)
+}
+
 module.exports={
     getBook,
     getBooks,
-    createBook
+    createBook,
+    updateBook
 }

@@ -3,7 +3,8 @@ const express = require('express')
 const {
     getBook,
     getBooks,
-    createBook
+    createBook,
+    updateBook
 } = require('../controller/BookCotroller')
 
 
@@ -17,6 +18,9 @@ router.get('/:isbn',getBook)
 
 //create book
 router.post('/add',createBook)
+
+//update book
+router.patch('/update/:isbn',updateBook)
 
 
 module.exports=router;
